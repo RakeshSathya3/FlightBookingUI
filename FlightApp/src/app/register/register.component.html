@@ -1,0 +1,122 @@
+<div class="col d-flex justify-content-center align-items-center h-10" >  
+    <div class="col">
+        <div class="card card-registration my-4" style="background-color:burlywood">
+          <div class="row g-0">
+            <div class="col-xl-3">
+                <img src="/assets/FlightRegister1.png" alt="image"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  <br/>
+                  <br/>
+                  <div>
+                    <p style="font-style: oblique;color:blue;font-size: larger;">“Once you have tasted flight, you will forever walk the earth with your eyes turned skywards.” – Leonardo Da Vinci</p>
+                  </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card-body p-md-6 text-black">
+                    <h3 class="mb-6 text-uppercase">USER REGISTER FORM</h3>                                                     
+                </div>  
+                <form [formGroup]="NewUserData.formRegisterGroup">
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="NewUserData.userName" formControlName="userNameControl"
+                        class="form-control" placeholder="Full Name">
+                    <div style="color:red;" *ngIf="NewUserData.formRegisterGroup.dirty"
+                        [hidden]="!(hasError('required','userNameControl'))">
+                        Full Name Required
+                    </div>
+                </div>
+               <!--  <div class="form-group">
+                  <label for="InputEmail">Email Id</label>
+                  <input type="email" class="form-control" [(ngModel)]="registerUserData.emailId"
+                      aria-describedby="emailHelp" placeholder="Enter email">
+              </div> -->
+              <!-- <div class="form-group">
+                  <label for="ContactNo">Contact Number</label>
+                  <input type="text" class="form-control" [(ngModel)]="registerUserData.contactNo"
+                      aria-describedby="emailHelp" placeholder="Enter Contact Number">
+              </div> -->
+              <div class="form-group">
+                <input type="text" [(ngModel)]="NewUserData.emailId" formControlName="emailControl" email
+                    placeholder="Email ID" class="form-control">
+                <div style="color:red;" *ngIf="NewUserData.formRegisterGroup.dirty"
+                    [hidden]="!(hasError('required','emailControl'))">
+                    Email ID Required
+                </div>
+                <div style="color:red;" *ngIf="NewUserData.formRegisterGroup.dirty"
+                    [hidden]="!(hasError('pattern','emailControl'))">
+                    emailId is not in correct format
+                </div>
+            </div>
+              <div class="form-group">
+                <input type="text" [(ngModel)]="NewUserData.contactNo" formControlName="mobileControl"
+                    class="form-control" placeholder="Mobile Number">
+                <div style="color:red;" *ngIf="NewUserData.formRegisterGroup.dirty"
+                    [hidden]="!(hasError('required','mobileControl'))">
+                    Mobile Number Required
+                </div>
+                <div style="color:red;" *ngIf="NewUserData.formRegisterGroup.dirty"
+                    [hidden]="!(hasError('pattern','mobileControl'))">
+                    Mobile Number Invalid
+                </div>
+            </div>
+              <div class="form-group">
+               <!--  <label for="ContactNo">Age</label> -->
+                <input type="text" class="form-control" [(ngModel)]="NewUserData.age" formControlName="userNameControl"
+                    placeholder="Enter Age">
+            </div>
+            <div class="form-group">
+              <label>Gender</label>                                    
+              <select class="form-select form-control" [(ngModel)]="NewUserData.gender" formControlName="userNameControl"
+                  aria-label="Default select example" placeholder="Select Gender">                                
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="O">Other</option>
+              </select>
+          </div>
+            <!-- <div class="form-group">
+                <label for="InputPassword">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="registerUserData.password"
+                    id="InputPassword" placeholder="Password">
+            </div> -->
+            <div class="form-group">
+              <input type="password" [(ngModel)]="NewUserData.password" formControlName="passwordControl"
+                  class="form-control"  placeholder="Password">
+              <div style="color:red;" *ngIf="NewUserData.formRegisterGroup.dirty"
+                  [hidden]="!(hasError('required','passwordControl'))">
+                  Password Required
+              </div>
+          </div>
+            <div class="form-group">
+                <input type="hidden" class="form-control" [(ngModel)]="NewUserData.roleId"
+                    aria-describedby="emailHelp" value=2>
+            </div>
+            <div class="text-center">
+                <button type="submit" (click)="registerUser()" [disabled]="!(NewUserData.formRegisterGroup.valid)" class="btn btn-success">Register</button>
+                <label style="color: green;">{{AlertMessage}}</label>                
+            </div>    
+            <p class="text-center mt-5 mb-0">Already have an account? <a routerLink="/login">Login here</a></p>
+          </form>
+                
+            </div>
+            <div class="col-xl-3">
+                <img src="/assets/FlightRegister2.png" alt="image"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  <br/>
+                  <br/>
+                  <div>
+                    <p style="font-style: oblique;color:blue;font-size: larger;">“Once you have tasted flight, you will forever walk the earth with your eyes turned skywards.” – Leonardo Da Vinci</p>
+                  </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

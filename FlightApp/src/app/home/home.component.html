@@ -1,0 +1,55 @@
+<div class="wrapper">
+    
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="card-body">
+      <h3 class="card-title">Welcome to BookYourTickets.com</h3>
+        The Flight Booking System is a booking solution for flight tickets.
+        It  consolidates data provided by different airline carriers and hence provides the user details 
+        and rates in real-time.
+        The  application allows them to book, cancel, view their bookings with ease.
+        Other  than this, it eases the management of bookings too.
+        All the bookings, flights, schedules and  routes can be viewed,
+        added and modified on a single application by the administrator.
+        <br />
+      <button type="button" class="btn btn-success signUpBtn">
+        <a class="nav-link" style="cursor:pointer;color: black;" *ngIf="LoggedIn(false)" routerLink="/register">Register</a>
+      </button>
+    </div>
+  </div>
+  <div class="card offer-card shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="card-body">
+      <h3 class="card-title">Check out the Best Offers Available</h3>
+      <div class="row">
+        <div class="col-md-3" style="padding: 5px;">
+          <img src="assets/special-offer.jpg" height="200px" width="250px" />
+        </div>
+        <div class="col-md-3" style="padding: 5px;">
+          <img src="assets/special-offer.jpg" height="200px" width="250px" />
+        </div>
+        <div class="col-md-3" style="padding: 5px;">
+          <img src="assets/special-offer.jpg" height="200px" width="250px" />
+        </div>
+        <div class="col-md-3" style="padding: 5px;">
+          <img src="assets/special-offer.jpg" height="200px" width="250px" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card  bg-white" style="padding-left: 30em;">
+    <div class="card-body">
+      <h3 class="card-title">About Author</h3>
+      <div class="row">
+        <div class="devCard col-md-3" style="padding: 5px;">
+          <img class="photo" src="assets/user.png" height="200px" /><br /><br />
+          <h5 style="width: 50em;">Rakesh Sathyanrayanan.</h5>
+          <hr />
+          <span class="info" >          
+                <p style="width: 50em;">The Man who left in the right direction!!!</p>
+            <hr/>            
+          </span>
+        </div>               
+      </div>
+    </div>
+  </div>
+
+</div>

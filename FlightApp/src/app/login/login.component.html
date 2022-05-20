@@ -1,0 +1,51 @@
+<div class="col d-flex justify-content-center align-items-center h-10">    
+    <div class="col">
+        <div class="card card-registration my-4" style="background-color:lightblue">
+            <br/>   
+            <div class="row g-0">                            
+                <div class="col-xl-4">
+                  <div class="card-body p-md-6 text-black">
+                    <h3 class="mb-2 text-uppercase" style="justify-content: center;">User Login Form</h3>
+                    <div>                        
+                        <label for="InputEmail">Email Id</label>
+                            <input type="email" class="form-control" [(ngModel)]="loginUserData.emailId" aria-describedby="emailHelp"
+                                placeholder="Enter email">
+                      </div>                      
+                      <div>      
+                        <label for="InputPassword">Password:</label>                  
+                        <input type="password" value="" class="form-control" [(ngModel)]="loginUserData.password" id="InputPassword" placeholder="Enter password">
+                      </div>
+                      <div class="d-flex justify-content-center pt-3">                        
+                        <button type="button" class="btn" (click)="loginUser()"  style="background-color:aquamarine;"> Login</button>                                              
+                      </div>
+                      <div class="d-flex justify-content-center pt-2">
+                        <a routerLink="/register">Forgot Password?</a>
+                      </div>
+                      <div class="d-flex justify-content-center pt-3">
+                        <p class="text-center">Don't have an account? <a routerLink="/register">Register here</a></p>  
+                      </div>
+                      <div>
+                          <p class="text-center">By proceeding, you agree to Rakesh Application's  <a href="https://safety.google/">Privacy Policy</a>, <a href="https://safety.google/">User Agreement</a> and <a href="https://safety.google/">T&Cs</a></p>
+                      </div>
+                  </div>
+                  
+                </div>   
+                <div class="col-xl-3">   
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p class="justify-content-center" style="font-style:oblique;color:purple;font-size: larger;">"Login and Grab upto 40% off* on Flight bookings!!!"</p>          
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p class="justify-content-center" style="font-style: oblique;color:slateblue;font-size: larger;">"Flat 50% off* for new users!!!"</p>                        
+                </div>     
+                <div class="col-xl-3">
+                    <img src="/assets/FlightLogin.png" alt="image">
+                </div>                       
+            </div>
+        </div> 
+    </div>  
+</div>
+
+

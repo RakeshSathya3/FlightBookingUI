@@ -1,0 +1,145 @@
+<div class="col d-flex  h-16">
+    <div class="col">
+        <div class="card card-registration my-4" style="background-color:darkseagreen">
+            <div class="row g-0">
+                <div class="col-xl-8">
+                    <div class="card-body p-md-6 text-black">
+                        <h3 class="mb-2 text-uppercase">Search Flights</h3>
+                        <div class="row g-0">
+                            <div class="col-md-8 mb-6">
+                                <div class="form-outline">
+                                    <input type="radio" aria-selected="true" id="roundTrip" style="margin-right:5px;"
+                                        name="travelType" value="roundTrip">
+                                    <label for="roundTrip" style="margin-right:20px;">Round Trip</label>
+
+                                    <input type="radio" style="margin-right:5px;" id="oneWay" name="travelType"
+                                        value="oneWay">
+                                    <label for="oneWay">One Way</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
+                                    <label class="input-control-label" style="font-size:x-large;">From</label>
+                                    <input type="text" class="form-control" [(ngModel)]="searchInputData.fromLocation"
+                                        aria-describedby="emailHelp" placeholder="From">
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
+                                    <label class="input-control-label">To</label>
+                                    <input type="text" class="form-control" [(ngModel)]="searchInputData.toLocation"
+                                        id="InputPassword" placeholder="To">
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="form-outline">
+                                    <label class="input-control-label">Date of travel</label>
+                                    <input type="date" class="form-control" [(ngModel)]="searchInputData.departureDate"
+                                        placeholder="Date of travel">
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-6">
+                                <div class="form-outline">
+                                    <label class="input-control-label">No of Passengers</label>
+                                    <input type="text" style="width: 100px;" class="form-control"
+                                        [(ngModel)]="searchInputData.noOfPassengers" placeholder="No of Passengers">
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row col-md-12" style="padding-left: 30em;">
+                            <button type="submit" (click)="searchFlights()" class="btn">Search Flights</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label style="color: green;"><strong>{{SuccessMessage}}</strong> </label>  
+            <label style="color: red;"><strong>{{AlertMessage}}</strong></label>
+        </div>
+          
+    </div>
+    
+</div>
+
+<div>
+    <h3>Business Class Seats</h3>
+</div>
+<div class="py-5">
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group" style="font-family:monospace">
+                <table class="table table-bordered">
+                    <thead style="background-color: cadetblue;">
+                        <tr style="font-family: initial;"> 
+                            <th scope="col">Flight No</th>
+                            <th scope="col">Flight Name</th>
+                            <th scope="col">From Location</th>
+                            <th scope="col">To Location</th>
+                            <th scope="col">Departure Date</th>
+                            <th scope="col">Arrival Date</th>
+                            <th scope="col">No Of Business Class Seats available</th>                           
+                            <th scope="col">Price</th>  
+                            <th>Action</th>                         
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let obj of flightDetails">
+                            <td>{{obj.flightNo}}</td>
+                            <td>{{obj.flightName}}</td>
+                            <td>{{obj.fromLocation}}</td>
+                            <td>{{obj.toLocation}}</td>
+                            <td>{{obj.departureDateTime}}</td>
+                            <td>{{obj.arrivalDateTime}}</td>
+                            <td>{{obj.noOfBusinessClassSeats}} </td>                           
+                            <td>{{obj.priceBc}}</td>   
+                            <td><button type="submit"  (click)="bookFlight(obj)" class="btn btn-success">Book
+                                BC Seats</button></td>                         
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h3>Non Business Class Seats</h3>
+</div>
+<div class="py-5">
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group" style="font-family:monospace">
+                <table class="table table-bordered">
+                    <thead style="background-color: cadetblue;">
+                        <tr style="font-family: initial;"> 
+                            <th>Flight No</th>
+                            <th>Flight Name</th>
+                            <th>From Location</th>
+                            <th>To Location</th>
+                            <th>Departure Date</th>
+                            <th>Arrival Date</th>                       
+                            <th>No Of Business Non Class Seats available</th>
+                            <th>Price</th>        
+                            <th>Action</th>                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let obj of flightDetails">
+                            <td>{{obj.flightNo}}</td>
+                            <td>{{obj.flightName}}</td>
+                            <td>{{obj.fromLocation}}</td>
+                            <td>{{obj.toLocation}}</td>
+                            <td>{{obj.departureDateTime}}</td>
+                            <td>{{obj.arrivalDateTime}}</td>                            
+                            <td>{{obj.noOfNonBusinessClassSeats}} </td>
+                            <td>{{obj.priceNonBc}}</td>  
+                            <td><button type="submit" (click)="bookFlight(obj)" class="btn btn-success">Book
+                                Non BC Seats</button></td>                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

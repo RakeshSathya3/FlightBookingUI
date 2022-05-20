@@ -1,0 +1,86 @@
+<div class="row py-5">
+    <h5>Admin's Inventory!!! Welcome Admin1</h5>
+</div>
+
+<div class="container py-3">
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group">
+                <div class="row">
+                    <table class="table table-bordered ">
+                        <thead style="border-color: palegoldenrod;background-color: peru;">
+                            <tr>
+                                <th scope="col">Flight No</th>
+                                <th scope="col">Flight Name</th>
+                                <th scope="col">From Location</th>
+                                <th scope="col">To Location</th>
+                                <th scope="col">Departure Date</th>
+                                <th scope="col">Arrival Date</th>
+                                <th scope="col">No of BC Seats</th>
+                                <th scope="col">No of Non BC Seats</th>
+                                <th scope="col">BC Seat Price</th>
+                                <th scope="col">Non BC Seat Price</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let dynamic of flightDataArray; let i = index;">
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].flightNo" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].flightName" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].fromLocation" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].toLocation" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].departureDateTime" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].arrivalDateTime" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].noOfBusinessClassSeats" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].priceBC" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].noOfNonBusinessClassSeats" class="form-control"
+                                        type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="flightDataArray[i].priceNonBC" class="form-control" type="text" />
+                                </td>
+                                
+                                <td>
+                                    <span style="float: left;color: green;"><i (click)="addRow(i)"
+                                            class="fa fa-plus fa-lg"></i></span>
+                                    <span style="float: right; color: red;"><i (click)="deleteRow(i)"
+                                            class="fa fa-trash fa-lg"></i></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="row col-md-12">
+                        <button type="submit" (click)="addInventory()" class="btn btn-success">Add Flight(s)</button>
+                    </div>
+                </div>
+                <label style="color: red;">{{AlertMessage}}</label>    
+                <label style="color: red;">{{SuccessMessage}}</label>    
+            </div>
+        </div>
+    </div>
+</div>

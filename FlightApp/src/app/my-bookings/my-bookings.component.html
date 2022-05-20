@@ -1,0 +1,87 @@
+<div class="col d-flex justify-content-center align-items-center h-12" >  
+    <div class="col">
+        <div class="card card-registration my-4" style="background:lightskyblue;padding-left: 20px;">
+            <div class="row g-0">
+                <div class="col-xl-4">
+                    <img src="/assets/BookingHistory.jpg" alt="image"
+                    alt="Sample photo" class="img-fluid"
+                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />                
+                </div> 
+                <div class="col-xl-8">
+                    <div class="card-body p-md-6 text-black">
+                      <h3 class="mb-2 text-uppercase">get booking history</h3>
+                    </div>    
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="form-group col-md-4">
+                                <input class="form-control" [(ngModel)]="emailId" type="text" placeholder="Email Id" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button type="submit" (click)="getBookingHistoryByEmail()" class="btn btn-success">Get all
+                                    bookings</button>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-md-4">
+                               <input class="form-control" [(ngModel)]="pnr" type="text" placeholder="PNR Number" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button type="submit" (click)="getBookingHistoryByPnr()" class="btn btn-success">Get PNR
+                                    details</button>
+                            </div>
+                        </div> 
+                     <div class="row ">
+                    <div class="form-group col-md-4">
+                       <input class="form-control" [(ngModel)]="pnr" type="text" placeholder="PNR Number" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <button type="submit" (click)="cancelBooking()" class="btn btn-danger">Cancel Booking</button>
+                    </div>                       
+                </div>        
+                <label style="color: red;">{{AlertMessage}}</label>         
+                    </div>                    
+                </div>
+            </div> 
+            <div class="row">
+                <div class="py-5" *ngIf="isBookingHistoryRequired">
+                    <div class="row ">
+                        <div class="form col-md-12">
+                            <div class="form-group">
+                                <table class="table table-bordered ">
+                                    <thead style="border-color: palegoldenrod;background-color: peru;">
+                                        <tr>
+                                            <th scope="col">PNR</th>
+                                            <th scope="col">User Name</th>
+                                            <th scope="col">Flight No</th>
+                                            <th scope="col">Passenger Name</th>
+                                            <th scope="col">Passenger Age</th>
+                                            <th scope="col">Passenger Gender</th>
+                                            <th scope="col">Departure Date</th>
+                                            <th scope="col">Return Date</th>                                            
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let obj of bookingHistoryDetailsArray">
+                                            <td>{{obj.pnr}}</td>
+                                            <td>{{obj.userName}}</td>
+                                            <td>{{obj.flightNo}}</td>
+                                            <td>{{obj.passengerName}}</td>
+                                            <td>{{obj.passengerAge}}</td>
+                                            <td>{{obj.passengerGender}}</td>
+                                            <td>{{obj.departureDateTime}}</td>
+                                            <td>{{obj.returnDateTime}}</td>                                            
+                                            <td>{{obj.price}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>  
+    </div>  
+</div>  
+
